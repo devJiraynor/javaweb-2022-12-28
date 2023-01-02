@@ -1,0 +1,15 @@
+package chapter01;
+
+public class Example07 {
+
+	public static void main(String[] args) {
+		// 제어문 (반복) while
+		boolean flag = true;
+		int number = 0;
+		
+		while (flag) {
+			System.out.println("Loop");
+		}
+	}
+
+}

@@ -1,0 +1,14 @@
+package chapter01;
+
+public class Example06 {
+
+	public static void main(String[] args) {
+		// 제어문 (반복문) for
+		for (int i = 0; i < 10; i++) {
+			System.out.println(i);
+		}
+		
+		int[] numbers = new int[5];
+	}
+
+}

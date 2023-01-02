@@ -1,0 +1,19 @@
+package chapter_01;
+
+public class Example01 {
+
+	public static void main(String[] args) {
+		
+		// 한줄 주석
+		/* 부분 주석 */
+		
+		// 변수
+		// 데이터를 저장하는 메모리 공간 (변경가능)
+		// 데이터타입 변수명;  (변수 선언)
+		int number;
+		number = 10;
+		
+		char character = 'a';
+	}
+
+}
