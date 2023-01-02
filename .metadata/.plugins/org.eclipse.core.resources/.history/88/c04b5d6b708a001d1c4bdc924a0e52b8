@@ -1,0 +1,11 @@
+package chapter02;
+
+// class
+
+public class Example01 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -13,7 +13,6 @@ public class Example05 {
 		case 1: 
 			System.out.println("1을 더합니다.");
 			System.out.println(number += 1);
-			break;
 		case 2:
 			System.out.println("2을 곱합니다.");
 			System.out.println(number *= 2);

@@ -1,0 +1,42 @@
+package chapter02;
+
+// class: 객체를 생성하는 설계도 / 기준
+class SmartPhone {
+	
+	// 멤버 변수
+	String nation;
+	String os;
+	String owner;
+	String telNumber;
+	
+	// 메서드
+	void tel(String toTelNumber) {
+		// 전화번호가 빈값이면 '전화번호를 입력하세요.'
+		if (toTelNumber.isEmpty()) {
+			System.out.println("전화번호를 입력하세요.");
+			return;
+		}
+		// 빈값이 아니면 'toTelNumber에 전화중입니다.'
+		
+	}
+	void sendMessage() {
+		
+	}
+}
+
+public class Example01 {
+
+	public static void main(String[] args) {
+		// 인스턴스 선언 및 생성
+		SmartPhone myPhone;
+		myPhone = new SmartPhone();
+		SmartPhone yourPhone = new SmartPhone();
+		
+		System.out.println(myPhone);
+		System.out.println(yourPhone);
+	}
+
+}
+
+
+
