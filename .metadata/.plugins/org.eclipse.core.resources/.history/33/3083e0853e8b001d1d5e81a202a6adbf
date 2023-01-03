@@ -1,0 +1,21 @@
+package chapter02;
+
+class myMath {
+	double getEquilateralTriangleArea(double side) {
+		// 매개변수 검증
+		if (side <= 0) {
+			return 0;
+		}
+		
+		double result = (Math.sqrt(3) / 4) * Math.pow(side, 2);
+		return result;
+	}
+}
+
+public class Example03 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

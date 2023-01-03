@@ -25,12 +25,6 @@ class MyMath {
 		System.out.println(number);
 		return number;
 	}
-	
-	static void increaseTriangle(Triangle triangle) {
-		triangle.base++;
-		triangle.height++;
-		triangle.diagonal++;
-	}
 }
 
 public class Example03 {
@@ -51,12 +45,6 @@ public class Example03 {
 		number = MyMath.increase(number);
 		
 		Triangle triangle = new Triangle();
-		triangle.createAndPrint();
-		System.out.println(triangle);
-		
-		MyMath.increaseTriangle(triangle);
-		System.out.println(triangle.base);
-		System.out.println(triangle);
 	}
 
 }
