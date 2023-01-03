@@ -156,13 +156,6 @@ public class Example02 {
 		Triangle triangle8 = new Triangle();
 		Triangle triangle9 = new Triangle();
 		Triangle triangle10 = new Triangle();
-		
-		triangle6.createAndPrint();
-		triangle7.createAndPrint();
-		triangle8.createAndPrint();
-		triangle9.createAndPrint();
-		triangle10.createAndPrint();
-		
 	}
 
 }

@@ -7,16 +7,6 @@ class Triangle {
 	double height;
 	// 대각선
 	double diagonal;
-	
-	void createAndPrint() {
-		base = 3;
-		height = 4;
-		diagonal = 5;
-
-		System.out.println("base : " + base);
-		System.out.println("height : " + height);
-		System.out.println("diagonal : " + diagonal);
-	}
 }
 
 class Pythagoras {
@@ -105,64 +95,14 @@ public class Example02 {
 		
 		// 삼각형 인스턴스
 		Triangle triangle1 = new Triangle();
-		Triangle triangle2 = new Triangle();
-		Triangle triangle3 = new Triangle();
-		Triangle triangle4 = new Triangle();
-		Triangle triangle5 = new Triangle();
 		
-		// Triangle 인스턴스를 초기화 하고 출력
 		triangle1.base = 3;
 		triangle1.height = 4;
 		triangle1.diagonal = 5;
 		
-		System.out.println("==========");
-		System.out.println("base : " + triangle1.base + " / height : " + triangle1.height + " / diagonal : " + triangle1.diagonal);
-		System.out.println("==========");
-		
-		triangle2.base = 3;
-		triangle2.height = 4;
-		triangle2.diagonal = 5;
-		
-		System.out.println("==========");
-		System.out.println("base : " + triangle2.base + " / height : " + triangle2.height + " / diagonal : " + triangle2.diagonal);
-		System.out.println("==========");
-		
-		triangle3.base = 3;
-		triangle3.height = 4;
-		triangle3.diagonal = 5;
-		
-		System.out.println("base : " + triangle3.base);
-		System.out.println("height : " + triangle3.height);
-		System.out.println("diagonal : " + triangle3.diagonal);
-		
-		triangle4.base = 3;
-		triangle4.height = 4;
-		triangle4.diagonal = 5;
-		
-		System.out.println("base : " + triangle4.base);
-		System.out.println("height : " + triangle4.height);
-		System.out.println("diagonal : " + triangle4.diagonal);
-		
-		triangle5.base = 3;
-		triangle5.height = 4;
-		triangle5.diagonal = 5;
-		
-		System.out.println("base : " + triangle5.base);
-		System.out.println("height : " + triangle5.height);
-		System.out.println("diagonal : " + triangle5.diagonal);
-		
-		Triangle triangle6 = new Triangle();
-		Triangle triangle7 = new Triangle();
-		Triangle triangle8 = new Triangle();
-		Triangle triangle9 = new Triangle();
-		Triangle triangle10 = new Triangle();
-		
-		triangle6.createAndPrint();
-		triangle7.createAndPrint();
-		triangle8.createAndPrint();
-		triangle9.createAndPrint();
-		triangle10.createAndPrint();
-		
+		System.out.println("base : " + triangle1.base);
+		System.out.println("height : " + triangle1.height);
+		System.out.println("diagonal : " + triangle1.diagonal);
 	}
 
 }

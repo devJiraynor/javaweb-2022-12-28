@@ -150,19 +150,6 @@ public class Example02 {
 		System.out.println("base : " + triangle5.base);
 		System.out.println("height : " + triangle5.height);
 		System.out.println("diagonal : " + triangle5.diagonal);
-		
-		Triangle triangle6 = new Triangle();
-		Triangle triangle7 = new Triangle();
-		Triangle triangle8 = new Triangle();
-		Triangle triangle9 = new Triangle();
-		Triangle triangle10 = new Triangle();
-		
-		triangle6.createAndPrint();
-		triangle7.createAndPrint();
-		triangle8.createAndPrint();
-		triangle9.createAndPrint();
-		triangle10.createAndPrint();
-		
 	}
 
 }
