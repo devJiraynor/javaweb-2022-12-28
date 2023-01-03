@@ -103,8 +103,6 @@ public class Example02 {
 		System.out.println(Pythagoras.creator);
 		System.out.println(Pythagoras.getDiagonal(3, 4));
 		
-		long diagonal = (long) Pythagoras.getDiagonal(3, 4);
-		
 		// 삼각형 인스턴스
 		Triangle triangle1 = new Triangle();
 		Triangle triangle2 = new Triangle();
@@ -144,7 +142,7 @@ public class Example02 {
 		System.out.println("base : " + triangle4.base);
 		System.out.println("height : " + triangle4.height);
 		System.out.println("diagonal : " + triangle4.diagonal);
-
+		
 		triangle5.base = 3;
 		triangle5.height = 4;
 		triangle5.diagonal = 5;
@@ -164,6 +162,8 @@ public class Example02 {
 		triangle8.createAndPrint();
 		triangle9.createAndPrint();
 		triangle10.createAndPrint();
+		
+		for (int i = 0; i < 5; i ++) {}
 		
 	}
 
