@@ -53,6 +53,8 @@ public class Example01 {
 		// String hisPhone = new SmartPhone();
 		SmartPhone hisPhone = new SmartPhone();
 		yourPhone.nation = "United State";
+		System.out.println("yourPhone " + yourPhone.nation);
+		System.out.println("hisPhone " + hisPhone.nation);
 
 		System.out.println("==========");
 		System.out.println("yourPhone " + yourPhone);
