@@ -1,0 +1,17 @@
+package chapter02;
+
+// 게시물 작성
+// 게시물 목록
+// 게시물 상세 보기
+// 게시물 수정
+class Board {
+	
+}
+
+public class Sample01 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}
