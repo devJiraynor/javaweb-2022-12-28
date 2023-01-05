@@ -42,6 +42,8 @@ public class Sample01 {
 	
 	// 게시물 작성 기능
 	public static void writeBoard() {
+		Scanner writer = new Scanner(System.in);
+		
 		// 입력이 완료되면 게시물이 자동 등록됨
 		// 등록이 완료되면 처음화면으로 돌아옴
 		System.out.println("게시물 작성");

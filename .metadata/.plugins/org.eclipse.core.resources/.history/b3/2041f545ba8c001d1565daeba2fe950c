@@ -42,6 +42,8 @@ public class Sample01 {
 	
 	// 게시물 작성 기능
 	public static void writeBoard() {
+		Scanner writer = new Scanner(System.in);
+		
 		// 입력이 완료되면 게시물이 자동 등록됨
 		// 등록이 완료되면 처음화면으로 돌아옴
 		System.out.println("게시물 작성");
@@ -52,7 +54,14 @@ public class Sample01 {
 			BOARD_LIST[i] = new Board();
 
 			BOARD_LIST[i].id = i;
-			setBoard(i);
+			System.out.println("타이틀 : ");
+			BOARD_LIST[i].title = writer.nextLine();
+			System.out.println("작성자 : ");
+			BOARD_LIST[i].writer = writer.nextLine();
+			System.out.println("작성 날짜 및 시간 : ");
+			BOARD_LIST[i].writeDate = writer.nextLine();
+			System.out.println("내용 : ");
+			BOARD_LIST[i].contents = writer.nextLine();
 			
 			break;
 		}
@@ -77,44 +86,22 @@ public class Sample01 {
 
 		if (selectBoardId >= BOARD_LIST.length) {
 			System.out.println("3 이상의 게시물은 없습니다.");
-			// 재귀 함수로 자기 자신을 다시 호출
 			getBoardList();
-			return 0;
 		}
 		if (selectBoardId < -1) {
 			System.out.println("잘못된 입력입니다.");
 			getBoardList();
-			return 0;
 		}
 		// 만약 -1을 입력하면 처음화면으로 돌아옴
 		if (selectBoardId == -1) {
-			return 0;
+			return -1;
 		}
 		BOARD_LIST[selectBoardId].detailPrint();
 		
 		// 게시물 상세에서 수정하기를 선택하면 수정을 할 수 있음 
-		System.out.println("1. 수정 / 0. 처음으로");
-		int updateSelect = selector.nextInt();
 		// 수정이 완료되면 처음화면으로 돌아옴
-		if (updateSelect == 0) return 0;
-		
-		setBoard(selectBoardId);
 
 		return 0;
-	}
-	
-	// 게시물 세팅 메서드
-	static void setBoard(int i) {
-		Scanner writer = new Scanner(System.in);
-		
-		System.out.println("타이틀 : ");
-		BOARD_LIST[i].title = writer.nextLine();
-		System.out.println("작성자 : ");
-		BOARD_LIST[i].writer = writer.nextLine();
-		System.out.println("작성 날짜 및 시간 : ");
-		BOARD_LIST[i].writeDate = writer.nextLine();
-		System.out.println("내용 : ");
-		BOARD_LIST[i].contents = writer.nextLine();
 	}
 
 	public static void main(String[] args) {

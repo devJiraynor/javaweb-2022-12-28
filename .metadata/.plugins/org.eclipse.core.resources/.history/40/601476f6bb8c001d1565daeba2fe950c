@@ -42,6 +42,8 @@ public class Sample01 {
 	
 	// 게시물 작성 기능
 	public static void writeBoard() {
+		Scanner writer = new Scanner(System.in);
+		
 		// 입력이 완료되면 게시물이 자동 등록됨
 		// 등록이 완료되면 처음화면으로 돌아옴
 		System.out.println("게시물 작성");
@@ -52,7 +54,14 @@ public class Sample01 {
 			BOARD_LIST[i] = new Board();
 
 			BOARD_LIST[i].id = i;
-			setBoard(i);
+			System.out.println("타이틀 : ");
+			BOARD_LIST[i].title = writer.nextLine();
+			System.out.println("작성자 : ");
+			BOARD_LIST[i].writer = writer.nextLine();
+			System.out.println("작성 날짜 및 시간 : ");
+			BOARD_LIST[i].writeDate = writer.nextLine();
+			System.out.println("내용 : ");
+			BOARD_LIST[i].contents = writer.nextLine();
 			
 			break;
 		}
@@ -98,23 +107,18 @@ public class Sample01 {
 		// 수정이 완료되면 처음화면으로 돌아옴
 		if (updateSelect == 0) return 0;
 		
-		setBoard(selectBoardId);
-
-		return 0;
-	}
-	
-	// 게시물 세팅 메서드
-	static void setBoard(int i) {
 		Scanner writer = new Scanner(System.in);
 		
 		System.out.println("타이틀 : ");
-		BOARD_LIST[i].title = writer.nextLine();
+		BOARD_LIST[selectBoardId].title = writer.nextLine();
 		System.out.println("작성자 : ");
-		BOARD_LIST[i].writer = writer.nextLine();
+		BOARD_LIST[selectBoardId].writer = writer.nextLine();
 		System.out.println("작성 날짜 및 시간 : ");
-		BOARD_LIST[i].writeDate = writer.nextLine();
+		BOARD_LIST[selectBoardId].writeDate = writer.nextLine();
 		System.out.println("내용 : ");
-		BOARD_LIST[i].contents = writer.nextLine();
+		BOARD_LIST[selectBoardId].contents = writer.nextLine();
+
+		return 0;
 	}
 
 	public static void main(String[] args) {
