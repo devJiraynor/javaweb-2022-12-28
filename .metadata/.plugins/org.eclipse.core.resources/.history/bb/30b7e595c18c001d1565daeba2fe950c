@@ -1,0 +1,28 @@
+package chapter02;
+
+// 생성자 & 오버로딩
+// 오버로딩 : 같은 이름의 메서드를 매개변수의 상태 다르게하여 여러 개를 생성 할 수 있도록 함
+class Juice {
+	String name;
+	String company;
+	int kcal;
+	int volume;
+	
+	void drink(int ml) {
+		System.out.println("int drink!");
+		volume -= ml;
+	}
+	
+	void drink(float ml) {
+		System.out.println("float drink!");
+		volume -= ml;
+	}
+}
+
+public class Example05 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}
