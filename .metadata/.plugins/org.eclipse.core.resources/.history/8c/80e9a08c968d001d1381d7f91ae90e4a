@@ -26,28 +26,6 @@ public class Modifier {
 	public String getName() {
 		return this.name;
 	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getTelNumber() {
-		return telNumber;
-	}
-
-	public void setTelNumber(String telNumber) {
-		this.telNumber = telNumber;
-	}
-
-	public Modifier(String name, String address, String telNumber) {
-		this.name = name;
-		this.address = address;
-		this.telNumber = telNumber;
-	}
 	
 }
 
