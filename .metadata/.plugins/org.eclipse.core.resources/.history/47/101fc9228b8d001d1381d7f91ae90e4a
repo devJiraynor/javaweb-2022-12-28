@@ -1,0 +1,86 @@
+package chapter02;
+
+class People {
+	String name;
+	String gender;
+	int age;
+	String address;
+	String email;
+	
+	People(String name, String gender) {
+		this.name = name;
+		this.gender = gender;
+	}
+	
+	void eatBreakfast() {
+		System.out.println("7시에 아침 밥을 먹습니다.");
+	}
+}
+
+// 상속을 사용하는 이유
+class Developer extends People {
+	String languageSkill;
+	String company;
+	String developPosition;
+	
+	Developer(String name, String gender, String company) {
+		// super() : 슈퍼 클래스의 생성자
+		super(name, gender);
+		this.company = company;
+	}
+	
+	void eatBreakfast() {
+		System.out.println(super.name + "는 10시에 아침 밥을 먹습니다.");
+	}
+}
+
+class Police extends People {
+	// 관할
+	String jurisdiction;
+	// 직책
+	String officePosition;
+	
+	Police() {
+		super("John doe", "man");
+	}
+}
+
+class BusDriver extends People {
+	// 버스 차종
+	String vehicleModel;
+	// 지역
+	String busNumber;
+	
+	BusDriver() {
+		super("John doe", "man");
+	}
+}
+
+public class Example06 {
+
+	public static void main(String[] args) {
+		Developer developer = new Developer("John doe", null, null);
+		Police police = new Police();
+		BusDriver busDriver = new BusDriver();
+		
+		// 참조형 변수에서 데이터가 미정인 상태일 때 null
+		String str = null;
+//		developer = null;
+		
+		developer.languageSkill = "";
+		System.out.println(developer.name);
+		
+		developer.eatBreakfast();
+		police.eatBreakfast();
+		busDriver.eatBreakfast();
+	}
+
+}
+
+
+
+
+
+
+
+

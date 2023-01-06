@@ -1,0 +1,68 @@
+package chapter02;
+
+class People {
+	String name;
+	String gender;
+	int age;
+	String address;
+	String email;
+	
+	People(String name, String gender) {
+		this.name = name;
+		this.gender = gender;
+	}
+}
+
+// 상속을 사용하는 이유
+class Developer extends People {
+	String languageSkill;
+	String company;
+	String developPosition;
+	
+	Developer(String name, String gender, String company) {
+		// super() : 슈퍼 클래스의 생성자
+		super(name, gender);
+		this.company = company;
+	}
+}
+
+class Police extends People {
+	// 관할
+	String jurisdiction;
+	// 직책
+	String officePosition;
+	
+	Police() {
+		super("John doe", "man");
+	}
+}
+
+class BusDriver extends People {
+	// 버스 차종
+	String vehicleModel;
+	// 지역
+	String busNumber;
+	
+	Police() {
+		super("John doe", "man");
+	}
+}
+
+public class Example06 {
+
+	public static void main(String[] args) {
+		Developer developer = new Developer();
+		developer.languageSkill = "";
+		developer.name = "";
+		
+	}
+
+}
+
+
+
+
+
+
+
+

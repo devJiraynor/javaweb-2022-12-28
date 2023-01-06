@@ -1,0 +1,9 @@
+package chapter03.util;
+
+public class UtilExample {
+	
+	int add(int a, int b) {
+		return a + b;
+	}
+	
+}

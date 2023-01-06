@@ -1,0 +1,16 @@
+package chapter02;
+
+// 상속을 사용하는 이유
+class Developer {
+	
+}
+
+
+
+public class Example06 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

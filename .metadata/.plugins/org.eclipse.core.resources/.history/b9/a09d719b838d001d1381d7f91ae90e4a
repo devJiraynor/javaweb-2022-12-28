@@ -1,0 +1,38 @@
+package chapter02;
+
+class People {
+	String name;
+	String gender;
+	int age;
+	String address;
+	String email;
+}
+
+// 상속을 사용하는 이유
+class Developer {
+	String languageSkill;
+	String company;
+	String developPosition;
+}
+
+class Police {
+	// 관할
+	String jurisdiction;
+	// 직책
+	String officePosition;
+}
+
+class BusDriver {
+	// 버스 차종
+	String vehicleModel;
+	// 지역
+	String busNumber;
+}
+
+public class Example06 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}
