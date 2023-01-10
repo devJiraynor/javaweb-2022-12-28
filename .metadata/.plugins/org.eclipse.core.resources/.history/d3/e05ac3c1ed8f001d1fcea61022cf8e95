@@ -1,0 +1,34 @@
+package chapter03;
+
+// 인터페이스
+// 추상도가 가장 큰 설계도
+// 일반 메서드, 멤버 변수는 사용 불가능
+// static final로 선언된 상수 / abstract로 선언된 추상 메서드만 가질 수 있음
+public interface IExample01 {
+
+	// 인터페이스에는 static final로 선언된 상수만 선언 가능
+	public static final int NUMBER = 0;
+	
+	// 인스터페이스에는 추상메서드만 선언 가능
+	void hello();
+	
+}
+
+// 인터페이스의 상속
+interface IExample02 extends IExample01 {
+	
+	public static final double DECIMAL = 10.5;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+package chapter03;
+
+class Animal {
+	private String ears;
+	private String eyes;
+	private String legs;
+}
+
+public class Polymorphism {
+
+}

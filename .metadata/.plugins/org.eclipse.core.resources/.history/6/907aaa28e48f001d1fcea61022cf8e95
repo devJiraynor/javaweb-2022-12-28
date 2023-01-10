@@ -1,0 +1,52 @@
+package chapter03;
+
+class Animal {
+	String ears;
+	String eyes;
+	String legs;
+}
+
+class Bird extends Animal {
+	String wings;
+}
+
+class Monkey extends Animal {
+	String arms;
+	
+	Monkey() {}
+	
+	Monkey(String arms, String eyes, String ears, String legs) {
+		// super : 상위 클래스
+		super.ears = ears;
+		super.eyes = eyes;
+		super.legs = legs;
+		// this : 자기 자신
+		this.arms = arms;
+	}
+}
+
+public class Polymorphism {
+	
+	public static void main(String[] args) {
+		
+		Animal bird = new Bird();
+		bird.ears = "ear";
+		bird.eyes = "eye";
+		bird.legs = "leg";
+		// bird.wings = "wing";
+		
+		Bird bird2 = (Bird) bird;
+		bird2.wings = "wing";
+		
+		Monkey monkey1 = new Monkey();
+	}
+	
+}
+
+
+
+
+
+
+
+

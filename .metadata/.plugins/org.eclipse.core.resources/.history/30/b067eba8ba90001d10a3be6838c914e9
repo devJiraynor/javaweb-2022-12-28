@@ -1,0 +1,13 @@
+package chapter04;
+
+public class Example03 {
+	public static void main(String[] args) {
+		// Wrapper 클래스
+		// 기본 데이터 타입을 클래스를 이용해서 객체로 다룸
+		
+		// int -> Integer
+		Integer integer = 100;
+		int number = 100;
+		String numberStr = number;
+	}
+}

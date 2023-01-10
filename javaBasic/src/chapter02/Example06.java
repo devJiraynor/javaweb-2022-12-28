@@ -19,12 +19,12 @@ public class Example06 {
 //		developer = null;
 		
 		developer.languageSkill = "";
-		System.out.println(developer.name);
+//		System.out.println(developer.name);
 		
-		developer.eatBreakfast();
-		developer.eatBreakfast(11);
-		police.eatBreakfast();
-		busDriver.eatBreakfast();
+//		developer.eatBreakfast();
+//		developer.eatBreakfast(11);
+//		police.eatBreakfast();
+//		busDriver.eatBreakfast();
 	}
 
 }

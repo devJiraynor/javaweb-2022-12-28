@@ -5,4 +5,8 @@
     <fullyQualifiedTypeName name="chapter02.MyMath"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="chapter02.BusDriver"/>
+    <fullyQualifiedTypeName name="chapter03.util.UtilExample"/>
+    <fullyQualifiedTypeName name="chapter02.entity.Developer"/>
+    <fullyQualifiedTypeName name="chapter02.entity.Police"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,31 @@
+package chapter04;
+
+public class Example02 {
+
+	public static void main(String[] args) {
+		String comment = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+		
+		System.out.println(comment);
+		
+		// 문자열 연결하는 String API method
+		comment = comment.concat(comment);
+		System.out.println(comment);
+		
+		// 문자열을 잘라내는 String API method
+		String substr = comment.substring(6, 11);
+		System.out.println(substr);
+		
+		// 주민등록번호에서 생년 - 생월 - 생일 - 성별
+		String identityNumber = "930602-1111111";
+		
+		String year = identityNumber.substring(0, 2);
+		String month = identityNumber.substring(2, 4);
+		String day = identityNumber.substring(4, 6);
+		String gender = identityNumber.substring(7, 8);
+		
+		System.out.println(
+				"year : " + year + " month : " + month + 
+				" day : " + day + " gender : " + gender);
+	}
+
+}
