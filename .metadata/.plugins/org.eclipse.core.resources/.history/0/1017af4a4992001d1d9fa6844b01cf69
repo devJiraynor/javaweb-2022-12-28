@@ -1,0 +1,23 @@
+package chapter04;
+
+class Ticketing {
+	int ticketVolume = 1;
+	
+	public void ticketing() {
+		
+		if (ticketVolume > 0) {
+			System.out.println(Thread.currentThread().getName() + " - 티케팅!");
+		} else {
+			
+		}
+		
+	}
+}
+
+public class Example07 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

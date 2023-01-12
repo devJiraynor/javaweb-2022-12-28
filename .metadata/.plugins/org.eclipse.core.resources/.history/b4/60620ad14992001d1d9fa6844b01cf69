@@ -1,0 +1,37 @@
+package chapter04;
+
+class Ticketing {
+	int ticketVolume = 1;
+	
+	public void ticketing() {
+		
+		if (ticketVolume > 0) {
+			System.out.println(Thread.currentThread().getName() + " - 티케팅!");
+			ticketVolume--;
+		} else {
+			System.out.println(Thread.currentThread().getName() + " - 티케팅 실패!");
+		}
+		
+		System.out.println(Thread.currentThread().getName() + " - 티켓팅 시도 후 티켓 수 : " + ticketVolume);
+		
+	}
+}
+
+class TicketingThread implements Runnable {
+
+	Ticketing ticketing = new Ticketing();
+	
+	@Override
+	public void run() {
+		ticketing.ticketing();
+	}
+	
+}
+
+public class Example07 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

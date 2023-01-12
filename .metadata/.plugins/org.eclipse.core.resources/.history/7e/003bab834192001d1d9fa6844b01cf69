@@ -1,0 +1,13 @@
+package chapter04;
+
+// Thread 클래스를 상속받아서 Thread 만드는 방법
+class Thread1 extends Thread {
+	// run을 Override해서 작업할 내용을 구현
+	public void run() {
+		
+	}
+}
+
+public class Example06 {
+
+}

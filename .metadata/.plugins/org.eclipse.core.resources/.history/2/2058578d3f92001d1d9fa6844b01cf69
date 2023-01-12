@@ -1,0 +1,13 @@
+package chapter04;
+
+import java.util.Date;
+
+public class Board {
+	private Integer boardNumber;
+	private String boardTitle;
+	private String boardWriter;
+	private Date registDate;
+	private String boardContent;
+	
+	Board() {}
+}
