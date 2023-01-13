@@ -1,0 +1,25 @@
+package board;
+
+// 회원 등록
+// 회원 정보 보기
+// 회원 정보 수정
+// 회원 삭제
+// 회원 리스트
+public class Main {
+	// 회원 등록
+	private boolean createUser() {
+		
+	}
+	// 회원 정보 보기
+	
+	// 회원 정보 수정
+	
+	// 회원 삭제
+	
+	// 회원 리스트
+
+	public static void main(String[] args) {
+		
+	}
+
+}

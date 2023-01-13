@@ -1,0 +1,17 @@
+package chapter05;
+
+abstract class SuperClass {
+	abstract void superMethod();
+}
+
+class SubClass extends SuperClass {
+	
+}
+
+public class Example02 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

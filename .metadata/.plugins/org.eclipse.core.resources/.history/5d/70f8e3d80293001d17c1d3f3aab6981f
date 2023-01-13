@@ -1,0 +1,26 @@
+package chapter05;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Example01 {
+
+	public static void main(String[] args) {
+		// 제너릭
+		// 다양한 타입을 다루는 클래스 혹은 메서드에서 타입을 지정해 주는 것
+		List strList = new ArrayList();
+		strList.add("기본 문자열");
+		// 제너릭을 사용하지 않으면 매번 작업시 마다 형변환 작업을 진행해야 함
+		String str = (String) strList.get(0);
+		
+		List<String> strList2 = new ArrayList<String>();
+		strList2.add("기본 문자열");
+		String str2 = strList2.get(0);
+	}
+
+}
+
+
+
+
+
