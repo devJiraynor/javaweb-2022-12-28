@@ -68,19 +68,15 @@ public class Main {
 		// database에서 해당 인덱스 요소 제거
 		database.remove(index);
 		
-		return true;
+		return false;
 	}
 	// 회원 리스트
 	private List<User> readUserList() {
-		return database;
+		return null;
 	}
 
 	// 메인 메서드
 	public static void main(String[] args) {
-		
-		while(true) {
-			// 1. 생성 / 2. 읽기 / 3. 수정 / 4. 삭제 / 5. 리스트 불러오기 / 6. 종료
-		}
 		
 	}
 	
