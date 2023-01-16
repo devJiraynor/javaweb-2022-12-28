@@ -55,7 +55,7 @@ public class Main {
 		user.setName(name);
 		user.setTelNumber(telNumber);
 		
-		return user;
+		return null;
 	}
 	// 회원 삭제
 	private boolean deleteUser() {
@@ -81,8 +81,8 @@ public class Main {
 	
 	// 특정 회원 아이디를 database에서 검색하는 메서드
 	private User selectUser(int id) {
-		for (int i = 0; i < database.size(); i++) {
-			if (database.get(i).getId() == id) return database.get(i);
+		for (User user: database) {
+			if (user.getId() == id) return user;
 		}
 		return null;
 	}

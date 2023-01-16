@@ -39,23 +39,9 @@ public class Main {
 	}
 	// 회원 정보 수정
 	private User updateUser(UpdateUserDto dto) {
-		// 입력된 id 값 검증
 		int id = dto.getId();
 		if (id < 0) return null;
-		// 데이터베이스에서 입력받은 id에 해당하는 user정보를 불러옴
-		User user = selectUser(id);
-		// 입력받은 id에 해당하는 user정보가 있는지 검증
-		if (user == null) return null;
-		// 입력받은 패스워드하고 해당 유저의 패스워드가 같은지 검증
-		String password = dto.getPassword();
-		if (!password.equals(user.getPassword())) return null;
-		// 유저 정보 변경
-		String name = dto.getName();
-		String telNumber = dto.getTelNumber();
-		user.setName(name);
-		user.setTelNumber(telNumber);
-		
-		return user;
+		return null;
 	}
 	// 회원 삭제
 	private boolean deleteUser() {
@@ -81,8 +67,8 @@ public class Main {
 	
 	// 특정 회원 아이디를 database에서 검색하는 메서드
 	private User selectUser(int id) {
-		for (int i = 0; i < database.size(); i++) {
-			if (database.get(i).getId() == id) return database.get(i);
+		for (User user: database) {
+			if (user.getId() == id) return user;
 		}
 		return null;
 	}

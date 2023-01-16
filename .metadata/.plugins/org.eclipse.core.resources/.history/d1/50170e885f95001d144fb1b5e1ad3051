@@ -1,24 +1,22 @@
 package board;
 
-public class User {
-	// 아이디
+// DTO: Data Transfer Object
+// 데이터 전송 객체
+// 서로 다른 레이어 간에 데이터를 송수신 할때 사용되는 객체
+public class UpdateUserDto {
 	private int id;
-	// 비밀번호
-	private String password;
-	// 이름
 	private String name;
-	// 전화번호
 	private String telNumber;
 	
-	// 생성자
-	public User(int id, String password, String name, String telNumber) {
+	// constructor
+	public UpdateUserDto(int id, String password, String name, String telNumber) {
 		this.id = id;
 		this.password = password;
 		this.name = name;
 		this.telNumber = telNumber;
 	}
 	
-	// getter, setter 메서드
+	// getter, setter
 	public int getId() {
 		return this.id;
 	}
@@ -50,16 +48,4 @@ public class User {
 	public void setTelNumber(String telNumber) {
 		this.telNumber = telNumber;
 	}
-
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", password=" + password + ", name=" + name + ", telNumber=" + telNumber + "]";
-	}
-	
 }
-
-
-
-
-
-

@@ -55,7 +55,7 @@ public class Main {
 		user.setName(name);
 		user.setTelNumber(telNumber);
 		
-		return user;
+		return null;
 	}
 	// 회원 삭제
 	private boolean deleteUser() {

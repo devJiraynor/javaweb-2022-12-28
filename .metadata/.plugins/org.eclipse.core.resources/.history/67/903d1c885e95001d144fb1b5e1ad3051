@@ -1,0 +1,13 @@
+package board;
+
+public class UpdateUserDto {
+	private int id;
+	private String password;
+	private String name;
+	private String telNumber;
+	
+	// getter, setter
+	public int getId() {
+		return this.id;
+	}
+}
