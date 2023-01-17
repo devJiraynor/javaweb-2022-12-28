@@ -1,0 +1,23 @@
+package board;
+
+import java.util.Date;
+
+// 데이터베이스 테이블로 부터
+// 추출해 온 Class는 **Entity라 명명 함
+public class BoardEntity {
+	// Entity class는
+	// 멤버변수가 테이블의 필드명과
+	// 일치해야함
+	private int boardNumber;
+	private String boardTitle;
+	private String boardContent;
+	private Date boardDate;
+	private int boardWriter;
+}
+
+
+
+
+
+
+

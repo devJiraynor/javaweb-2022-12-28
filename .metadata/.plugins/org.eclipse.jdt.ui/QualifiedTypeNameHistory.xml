@@ -32,4 +32,5 @@
     <fullyQualifiedTypeName name="chapter02.entity.Developer"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="board.UpdateUserDto"/>
 </qualifiedTypeNameHistroy>
