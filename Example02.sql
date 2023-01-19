@@ -78,9 +78,24 @@ SELECT * FROM Board;
 
 SELECT * FROM Board WHERE boardTitle Like '%%';
 
+# Board 테이블에서 boardWriter가 1 이거나 2인 레코드에서 모든 컬럼 선택
 
+# 1. OR 연산 사용
+SELECT * FROM Board WHERE boardWriter = 1 OR boardWriter = 2;
+# 2. IN 연산 사용
+SELECT * FROM Board WHERE boardWriter IN (1, 2);
 
+# Board 테이블에서 boardDate가 2023-01-03부터 2023-01-10까지 레코드에서 모든 컬럼을 선택
+SELECT * FROM Board WHERE boardDate BETWEEN '2023-01-03' AND '2023-01-10';
 
+# Board 테이블에서 작성 일자가 1월인 레코드에서 모든 컬럼을 선택
+
+# 1. LIKE _ 연산 사용
+SELECT * FROM Board WHERE boardDate LIKE '_____01___';
+# 2. LIKE % 연산 사용
+SELECT * FROM Board WHERE boardDate LIKE '%-01-%';
+# 3. BETWEEN 연산 사용 (2월 사용 불가능)
+SELECT * FROM Board WHERE boardDate BETWEEN '2023-01-01' AND '2023-01-31';PRIMARYreservationreservation
 
 
 

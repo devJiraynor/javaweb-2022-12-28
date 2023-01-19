@@ -31,7 +31,7 @@ CREATE TABLE Reservation(
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(30) NOT NULL,
   reservationDate DATE NOT NULL,
-  roomNumber INT
+  roomNumber INT 
 );
 
 # 선택된 데이터베이스의 테이블을 조회
@@ -302,9 +302,64 @@ SELECT IFNULL(NULL, '값이 지정되지 않았습니다.');
 # roomNumber가 null이면 '아직 방이 배정되지 않았습니다.'를 출력
 SELECT name, IFNULL(roomNumber, 0) FROM Reservation;
 
+# 패턴 매칭 (%, _)
+# 데이터의 특정 패턴에 해당하는 데이터를 조건으로 사용하기 위한 용도
+# LIKE 연산자를 사용
 
+# Reservation 테이블에서 name 값 중 성이 '고'인 레코드에서 모든 컬럼을 선택
+SELECT * FROM Reservation WHERE name LIKE '고%';
+SELECT * FROM Reservation WHERE name LIKE '고_';
 
+# % : 0개 이상의 문자를 대체
+# _ : 1개의 문자를 대체
 
+SELECT * FROM Reservation WHERE name LIKE '%';
+SELECT * FROM Reservation WHERE name LIKE '_';
+
+# Foreign Key
+# 해당 테이블이 외부 테이블을 참조할 때 특정 컬럼을 외부 테이블의 컬럼 값으로 지정하는 키
+# 참조의 기준
+
+# CONSTRAINT 제약조건명 FOREIGN KEY (해당 필드에서 참조키로 지정할 컬럼)
+# REFERENCES 참조할 테이블명 (참조할 테이블의 기본키)
+
+# 주의사항
+# 1. 참조할 테이블이 존재해야함
+# 2. 참조할 컬럼이 참조할 테이블의 기본키이어야 함
+
+# [CONSTRAINT 제약조건명] 은 생략 가능
+
+CREATE TABLE Room (
+	roomNumber INT PRIMARY KEY,
+    roomSize INT NOT NULL,
+    roomName VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE Reservation2 (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(30) NOT NULL,
+    reservationDate DATE NOT NULL,
+    note TEXT,
+    roomNumber INT,
+    
+    CONSTRAINT Reservation_RoomNumber_FK FOREIGN KEY (roomNumber) 
+    REFERENCES Room (roomNumber)
+);
+
+# 참조 제약조건을 설정하면
+# 참조하는 테이블에 해당 컬럼의 값이 존재해야 참조 할 수 있음
+
+INSERT INTO Reservation(name, reservationDate, roomNumber)
+VALUES ('김철수', '2023-01-24', 2902);
+
+INSERT INTO Reservation2(name, reservationDate, roomNumber)
+VALUES ('김철수', '2023-01-24', 2901);
+
+INSERT INTO Room VALUES (2901, 28, 'VIP');
+
+SELECT * FROM Reservation2;
+
+DELETE FROM Room WHERE roomNumber = 2901;
 
 
 
