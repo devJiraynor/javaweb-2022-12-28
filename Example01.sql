@@ -225,5 +225,92 @@ SELECT * FROM Reservation WHERE note IS NULL;
 
 SELECT 1 IS NOT NULL;
 
+# Reservation 테이블에서 roomNumber 컬럼에 값이 존재하는 레코드의 모든 값을 선택
+SELECT * FROM Reservation WHERE roomNumber IS NOT NULL;
+
+# 사이값 비교 연산 (BETWEEN a AND b, NOT BETWEEN a AND b)
+# 좌항이 a보다 크거나 같으면서 b보다 작거나 같으면 1을 반환하고 아니면 0을 반환
+# 좌항이 a보다 작거나 b보다 크면 1을 반환하고 아니면 0을 반환
+
+SELECT 10 BETWEEN 5 AND 10, 10 NOT BETWEEN 3 AND 8;
+
+# Reservation 테이블에서 reservationDate가 2023-01-01부터 2023-02-28까지인 레코드의 모든 컬럼을 선택
+SELECT * FROM Reservation WHERE reservationDate BETWEEN '2023-01-01' AND '2023-02-28';
+
+# IN 연산 (IN, NOT IN)
+# 좌항이 우항에 해당하는 배열 값 중 하나라도 같다면 1을 반환하고 아니면 0을 반환
+# 좌항이 우항에 해당하는 배열 값이 포함되어 있지 않다면 1을 반환하고 아니면 0을 반환
+
+SELECT 1 IN (1, 2, 3, 4, 5), 1 NOT IN (1, 2, 3, 4, 5);
+
+# Reservation 테이블에서 name이 '홍길동', '고길동' 중 하나라도 해당되는 레코드의 모든 값을 선택
+SELECT * FROM Reservation WHERE name IN ('홍길동', '고길동');
+
+
+# 논리 연산
+
+# AND 연산 ( AND, && )
+# 좌항과 우항이 모두 1이면 1, 아니면 0을 반환
+# 여기서 비교되는 1과 0은 비교 연산의 결과
+
+SELECT 1 AND 0;
+
+# Reservation 테이블에서 name이 '고길동'이면서 note 컬럼에 값이 지정되어 있지 않은 모든 컬럼 선택
+SELECT * FROM Reservation WHERE name = '고길동' AND note IS NULL;
+
+# Reservation 테이블에서 note 컬럼에 값이 지정되어 있지 않고
+# reservationDate가 2023-01-01부터 2023-02-28까지인 레코드의 모든 컬럼 선택
+SELECT * 
+FROM Reservation 
+WHERE note IS NULL 
+AND (reservationDate BETWEEN '2023-01-01' AND '2023-02-28');
+
+# OR 연산 ( OR, || )
+# 좌항과 우항 중 하나라도 1이면 1을 반환하고 아니면 0을 반환
+# 여기서 비교되는 1과 0은 비교 연산의 결과
+
+SELECT 1 OR 0;
+
+# Reservation 테이블 중 name이 '고수'이거나 note값이 존재하는 레코드의 모든 컬럼을 선택
+SELECT * FROM Reservation WHERE name = '고수' OR note IS NOT NULL;
+
+# XOR 연산 ( XOR )
+# 좌항과 우항이 다르면 1을 반환 같으면 0을 반환
+
+SELECT 1 XOR 1;
+
+# AND 연산과 OR 연산에서 주의할 점
+# 실제로 구하고자하는 값을 정확히 파악
+
+# Reservation 테이블에서
+# name이 고길동 이면서 note 값이 존재하지 않거나 roomNumber가 1000 이상인 레코드 중 모든 컬럼을 선택
+
+# name = '고길동' AND note IS NULL OR roomNumber >= 1000
+SELECT * FROM Reservation WHERE name = '고길동' AND note IS NULL OR roomNumber >= 1000 AND ~~~;
+SELECT * FROM Reservation WHERE name = '고길동' AND ( note IS NULL OR roomNumber >= 1000 );
+
+SELECT * FROM Reservation WHERE (name = '고길동' AND note IS NULL) OR (roomNumber >= 1000 AND id = 4);
+SELECT * FROM Reservation WHERE (name = '고길동') AND (note IS NULL OR roomNumber >= 1000) AND (id = 4);
+
+
+# IFNULL(검사할 인수, NULL일 때의 값)
+# 검사할 인수가 NULL이면 NULL일 때의 값을 반환
+
+SELECT IFNULL(NULL, '값이 지정되지 않았습니다.');
+
+# Reservation 테이블에서 모든 레코드 중 name과 roomNumber를 선택하는데 
+# roomNumber가 null이면 '아직 방이 배정되지 않았습니다.'를 출력
+SELECT name, IFNULL(roomNumber, 0) FROM Reservation;
+
+
+
+
+
+
+
+
+
+
+
 
 
