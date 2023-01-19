@@ -44,6 +44,44 @@ UPDATE User SET password = 'qwer1234!!' WHERE name = '고길동';
 # ??
 DELETE FROM User WHERE id = 1;
 
+INSERT INTO Board(boardTitle, boardContent, boardDate, boardWriter)
+VALUES ('안녕히가세요.', '안녕하세요. 반갑습니다. 안녕히가세요.', '2023-01-11', 3);
+
+# 전체 게시물 보기
+SELECT * FROM Board;
+
+# 최신 글 순으로 보기
+SELECT * FROM Board ORDER BY boardDate DESC;
+
+# 오래된 글 순으로 보기
+SELECT * FROM Board ORDER BY boardDate ASC;
+
+# 10일 이내에 작성된 글 보기
+SELECT * FROM Board WHERE boardDate >= '2023-01-08';
+
+# 10일 이내에 작성된 글을 최신 순으로 보기
+SELECT * FROM Board WHERE boardDate >= '2023-01-08' ORDER BY boardDate DESC;
+
+# 작성자가 1 이면서 10일 이내에 작성된 글을 최신 순으로 보기
+SELECT * FROM Board WHERE boardWriter = 1 AND boardDate >= '2023-01-08' ORDER BY boardDate DESC;
+
+# 게시물 제목에 '안녕하세요'가 포함된 게시글 보기
+SELECT * FROM Board WHERE boardTitle LIKE '%안녕하세요%';
+
+# 게시물 내용에 '반갑습니다'가 포함된 게시글 보기
+SELECT * FROM Board WHERE boardContent LIKE '%반갑습니다%';
+
+# 게시물 제목 + 내용에 '안녕히가세요'가 포함된 게시글 보기
+SELECT * FROM Board WHERE boardTitle Like '%안녕히가세요%' OR boardContent Like '%안녕히가세요%';
+
+SELECT * FROM Board;
+
+SELECT * FROM Board WHERE boardTitle Like '%%';
+
+
+
+
+
 
 
 

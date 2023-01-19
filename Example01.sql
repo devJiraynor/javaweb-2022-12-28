@@ -105,6 +105,56 @@ UPDATE Reservation SET roomNumber = 1001;
 
 DELETE FROM Reservation WHERE id = 7;
 
+INSERT INTO Reservation (name, reservationDate, roomNumber) VALUES ('고수', '2023-03-02', 904);
+INSERT INTO Reservation (name, reservationDate) VALUES ('홍길동', '2023-09-07');
+INSERT INTO Reservation VALUES (20, '고길동', '2023-03-02', 3414);
+
+# 데이터 검색
+# - SELECT
+# SELECT 컬럼명1 [, 컬럼명2, ...] FROM 테이블명 [WHERE 조건];
+# 지정한 테이블에서 선택한 컬럼을 검색할 때 사용
+
+SELECT name FROM Reservation;
+SELECT name, roomNumber FROM Reservation;
+SELECT name, roomNumber FROM Reservation WHERE reservationDate = '2023-03-02';
+
+# SELELCT * 으로 모든 컬럼을 선택 할 수 있음
+SELECT * FROM Reservation;
+SELECT * FROM Reservation WHERE name = '홍길동';
+
+# WHERE 문 뒤에 비교연산자 및 논리연산자로 조건을 추가하여 검색할 수 있음
+SELECT * FROM Reservation WHERE name = '홍길동' AND reservationDate < '2023-04-01';
+SELECT * FROM Reservation WHERE name = '홍길동' OR reservationDate < '2023-04-01';
+SELECT * FROM Reservation WHERE roomNumber IS NOT NULL;
+SELECT * FROM Reservation WHERE roomNumber IS NULL;
+SELECT * FROM Reservation WHERE name LIKE '%길동' AND roomNumber IS NOT NULL;
+
+# 특정 컬럼의 중복 제거 DISTINCT
+SELECT DISTINCT name, roomNumber FROM Reservation;
+
+# 특정 컬럼을 기준으로 정렬 ORDER BY
+# 옵션 - ASC : 오름차순 / DESC : 내림차순
+SELECT * FROM Reservation ORDER BY reservationDate;
+SELECT * FROM Reservation ORDER BY reservationDate DESC;
+SELECT * FROM Reservation ORDER BY reservationDate DESC, roomNumber DESC;
+SELECT * FROM Reservation ORDER BY roomNumber DESC, reservationDate DESC;
+
+# 별칭 사용 AS
+SELECT name AS eman, roomNumber FROM Reservation;
+SELECT name, roomNumber FROM Reservation AS R;
+
+# MySQL 데이터타입
+# 문자열 타입 CHAR
+# 고정길이 문자열 / 길이로 지정할 수 있는 값의 범위 0 ~ 255
+ALTER TABLE Reservation ADD note CHAR(4);
+
+# DESCRIBE 테이블명; : 테이블의 정보를 볼 수 있음
+DESCRIBE Reservation;
+
+SELECT char_length(note) FROM Reservation WHERE name = '노트';
+
+INSERT INTO Reservation(name, reservationDate, note) VALUES ('노트', NOW(), ' ');
+
 
 
 
