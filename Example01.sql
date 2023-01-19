@@ -155,11 +155,75 @@ SELECT char_length(note) FROM Reservation WHERE name = '노트';
 
 INSERT INTO Reservation(name, reservationDate, note) VALUES ('노트', NOW(), ' ');
 
+# 비교 연산자
 
+SELECT * FROM Reservation;
 
+# 동등 비교연산 ( = )
+# 좌항이 우항과 같으면 1을 반환 아니면 0을 반환
 
+SELECT 1 = 1;
 
+# Reservation 테이블에서 roomNumber가 1001인 레코드의 모든 컬럼을 선택
+SELECT * FROM Reservation WHERE roomNumber = 1001;
 
+# not 연산 ( !=, <> )
+# 좌항이 우항과 다르면 1을 반환 아니면 0을 반환
+
+SELECT 1 != 1, 1 <> 2;
+
+# Reservation 테이블에서 roomNumber가 1001이 아닌 레코드의 모든 컬럼을 선택
+SELECT * FROM Reservation WHERE roomNumber != 1001;
+
+# Great than, Great than Equal 연산 (>, >=)
+# 좌항이 우항보다 크면 1을 반환 아니면 0을 반환
+# 좌항이 우항보다 크거나 가틍면 1을 반환 아니면 0을 반환
+
+SELECT 1 > 1, 1 >= 1;
+
+# Reservation 테이블에서 reservationDate가 2023-01-01 보다 크거나 같은(이후의) 모든 컬럼을 선택
+SELECT * FROM Reservation WHERE reservationDate >= '2023-01-01';
+
+# Less than, Less than Equal ( <, <= )
+# 좌항이 우항보다 작으면 1을 반환하고 아니면 0을 반환
+# 좌항이 우항보다 작거나 같으면 1을 반환하고 아니면 0을 반환
+
+SELECT 1 < 1, 1 <= 1;
+
+# Reservation 테이블에서 reservationDate가 2023-02-28 보다 작거나 같은 (이전인) 모든 컬럼 선택
+SELECT * FROM Reservation WHERE reservationDate <= '2023-02-28';
+
+# null 확인 ( <=> )
+# 좌항과 우항이 모두 null이면 1을 반환하고 아니면 0을 반환
+
+SELECT null <=> 1;
+
+# Reservation 테이블에서 roomNumber와 note가 모두 null인 레코드의 모든 컬럼을 선택
+SELECT * FROM Reservation WHERE roomNumber <=> note;
+
+# Equal 연산 ( IS )
+# 좌항이 우항과 같으면 1을 반환하고 아니면 0을 반환
+# 우항이 TRUE, FALSE, UNKNOWN 일때 사용
+
+SELECT FALSE IS TRUE;
+
+# Not Equal 연산 ( IS NOT )
+# 좌항이 우항과 다르면 1을 반환하고 아니면 0을 반환
+# 우항이 TRUE, FALSE, UNKNOWN 일때 사용
+
+SELECT FALSE IS NOT TRUE;
+
+# NULL 비교 연산 (IS NULL, IS NOT NULL)
+# 좌항이 NULL이면 1을 반환하고 아니면 0을 반환
+
+SELECT 1 IS NULL;
+
+# Reservation 테이블에서 note 컬럼에 값이 없는 레코드의 모든 값을 선택
+SELECT * FROM Reservation WHERE note IS NULL;
+
+# 좌항이 NULL이 아니면 1을 반환하고 아니면 0을 반환
+
+SELECT 1 IS NOT NULL;
 
 
 
