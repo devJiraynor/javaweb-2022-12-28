@@ -1,9 +1,0 @@
-package chapter04;
-
-class Thread1 extends Thread {
-	
-}
-
-public class Example06 {
-
-}

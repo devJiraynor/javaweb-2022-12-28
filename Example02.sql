@@ -1,6 +1,6 @@
 # Board 데이터베이스 생성
 CREATE DATABASE PEED;
-USE PEED;
+USE PEED;boarduserboard
 
 # User 테이블 생성
 CREATE TABLE User (
@@ -95,7 +95,60 @@ SELECT * FROM Board WHERE boardDate LIKE '_____01___';
 # 2. LIKE % 연산 사용
 SELECT * FROM Board WHERE boardDate LIKE '%-01-%';
 # 3. BETWEEN 연산 사용 (2월 사용 불가능)
-SELECT * FROM Board WHERE boardDate BETWEEN '2023-01-01' AND '2023-01-31';PRIMARYreservationreservation
+SELECT * FROM Board WHERE boardDate BETWEEN '2023-01-01' AND '2023-01-31';
+
+DROP TABLE BOARD;
+
+CREATE TABLE Board (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    boardTitle VARCHAR(200) NOT NULL,
+    boardContent TEXT NOT NULL,
+    boardDateTime DATETIME NOT NULL,
+    boardLike INT DEFAULT 0,
+    boardWriter INT NOT NULL,
+    
+	CONSTRAINT Board_FK FOREIGN KEY (boardWriter)
+    REFERENCES User (id)
+);
+
+SELECT * FROM User;
+
+INSERT INTO User (password, name, telNumber) VALUES ('P!ssw0rd', 'John doe', '010-1111-4444');
+INSERT INTO User (password, name, telNumber) VALUES ('qwer1234!!', 'Alies', '010-2222-8888');
+INSERT INTO User (password, name, telNumber) VALUES ('qlalfqjsgh12#$', 'Brown', '010-3333-6666');
+
+SELECT * FROM Board;
+
+INSERT INTO Board (boardTitle, boardContent, boardDateTime, boardWriter)
+VALUES ('HelloWorld!', 'Hello MySQL', now(), 2);
+INSERT INTO Board (boardTitle, boardContent, boardDateTime, boardWriter)
+VALUES ('HelloWorld!@', 'Hello MySQL@', now(), 2);
+
+
+INSERT INTO Board (boardTitle, boardContent, boardDateTime, boardWriter)
+VALUES ('Good Bye World!', 'Good Bye MySQL', now(), 3);
+
+# 게시물을 작성한 경험이 있는 유저의 이름과 전화번호, 작성한 게시물 제목을 구하시오.
+SELECT U.name, U.telNumber, B.boardTitle
+FROM User AS U, Board AS B
+WHERE U.id = B.boardWriter;
+
+SELECT U.name, U.telNumber, B.boardTitle
+FROM User AS U RIGHT JOIN Board AS B
+ON U.id = B.boardWriter;
+
+# 게시물을 작성한 경험이 있는 유저의 이름과 전화번호를 구하시오.
+SELECT DISTINCT U.name, U.telNumber
+FROM User AS U, Board AS B
+WHERE U.id = B.boardWriter;
+
+SELECT name, telNumber
+FROM User
+WHERE id IN (
+	SELECT DISTINCT boardWriter
+    FROM Board
+);
+
 
 
 
