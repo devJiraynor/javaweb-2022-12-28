@@ -489,7 +489,8 @@ WHERE roomNumber IN (
 # VIEW
 # 미리 선언된 쿼리를 사용해서 가상의 테이블을 만들어 보여주는 것
 
-# CREATE VIEW 뷰이름 AS SELECT 쿼리
+# CREATE VIEW 뷰이름 AS 
+# SELECT 쿼리
 
 CREATE VIEW ReservationInfo AS
 SELECT RV.id, RV.name, RV.reservationDate, RV.note, RM.roomNumber, RM.roomSize, RM.roomName
